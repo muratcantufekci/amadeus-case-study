@@ -11,7 +11,6 @@ This project created for amadeus test case
 - Formik
 - Yup
 - Dayjs
-- 
 ## To Run The Project
 
 Follow the steps in order:

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import FlightResultItem from "./FlightResultItem"
+import cx from "classnames"
 
 const FlightResults = ({ isOneDirection, departureFlights, returnFlights }) => {
     const [sortedDepartureFlights, setSortedDepartureFlights] = useState(departureFlights)
@@ -54,13 +55,13 @@ const FlightResults = ({ isOneDirection, departureFlights, returnFlights }) => {
     return (
         <div className="px-2 lg:px-16">
             <div className="flex items-center justify-center gap-2 mb-4 md:gap-4">
-                <span className={`p-2 border-2 text-sm border-sky-600 rounded-xl cursor-pointer font-semibold ${isSuggestedActive ? 'bg-sky-600 text-white' : ''} md:font-bold`} onClick={suggestedClickHandler}>Önerilen</span>
-                <span className={`p-2 border-2 text-sm border-sky-600 rounded-xl cursor-pointer font-semibold ${isFlightTimeActive ? 'bg-sky-600 text-white' : ''} md:font-bold`} onClick={flightTimeClickHandler}>Kalkış Saati</span>
-                <span className={`p-2 border-2 text-sm border-sky-600 rounded-xl cursor-pointer font-semibold ${isDurationActive ? 'bg-sky-600 text-white' : ''} md:font-bold`} onClick={durationClickHandler}>Uçuş Süresi</span>
-                <span className={`p-2 border-2 text-sm border-sky-600 rounded-xl cursor-pointer font-semibold ${isPriceActive ? 'bg-sky-600 text-white' : ''} md:font-bold`} onClick={priceClickHandler}>Fiyat</span>
+                <span className={cx('p-2 border-2 text-sm border-sky-600 rounded-xl cursor-pointer font-semibold md:font-bold' , {'bg-sky-600 text-white': isSuggestedActive})} onClick={suggestedClickHandler}>Önerilen</span>
+                <span className={cx('p-2 border-2 text-sm border-sky-600 rounded-xl cursor-pointer font-semibold md:font-bold' , {'bg-sky-600 text-white': isFlightTimeActive})} onClick={flightTimeClickHandler}>Kalkış Saati</span>
+                <span className={cx('p-2 border-2 text-sm border-sky-600 rounded-xl cursor-pointer font-semibold md:font-bold' , {'bg-sky-600 text-white': isDurationActive})} onClick={durationClickHandler}>Uçuş Süresi</span>
+                <span className={cx('p-2 border-2 text-sm border-sky-600 rounded-xl cursor-pointer font-semibold md:font-bold' , {'bg-sky-600 text-white': isPriceActive})} onClick={priceClickHandler}>Fiyat</span>
             </div>
             <div className={`flex flex-col p-4 mx-16 bg-white shadow-xl gap-4 border-2 justify-center xl:flex-row`}>
-                <div className={` w-full xl:w-1/2 ${!isOneDirection ? 'xl:border-r-2 xl:border-black' : ''}`}>
+                <div className={cx('w-full xl:w-1/2', {'xl:border-r-2 xl:border-black' : !isOneDirection})}>
                     <h4 className="text-center mb-4 font-extrabold">GİDİŞ</h4>
                     {
                         sortedDepartureFlights.map(item => (
