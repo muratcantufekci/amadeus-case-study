@@ -11,6 +11,12 @@ This project created for amadeus test case
 - Formik
 - Yup
 - Dayjs
+
+## Available Flights
+- from: İstanbul Havalimanı, to:Dalaman Havalimanı, departure date:19/03/2024, arrival date:21/03/2024
+- from: Ankara Esenboğa Havalimanı, to:Trabzon Havalimanı, departure date:20/03/2024, arrival date:21/03/2024
+- from: Adnan Menderes Havalimanı, to:Sabiha Gökçen Havalimanı, departure date:21/03/2024, arrival date:22/03/2024
+- from: Trabzon Havalimanı, to:Dalaman Havalimanı, departure date:22/03/2024, arrival date:23/03/2024
 ## To Run The Project
 
 Follow the steps in order:
